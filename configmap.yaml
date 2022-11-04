@@ -6,7 +6,7 @@ metadata:
   name: release-name-falco-obsec
   namespace: default
   labels:
-    app: release-name-falco-obsec
+    app: release-name-falco-obsecfuck
     chart: "falco-obsec-0.1.0"
     release: "release-name"
     heritage: "Helm"
