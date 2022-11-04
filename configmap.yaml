@@ -21,7 +21,7 @@ data:
     # every new software version. falco_rules.local.yaml is only created
     # if it doesn't exist. If you want to customize the set of rules, add
     # your customizations to falco_rules.local.yaml.
-    #
+    ###
     # The files will be read in the order presented here, so make sure if
     # you have overrides they appear in later files.
     rules_file:
