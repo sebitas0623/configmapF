@@ -3,7 +3,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: release-name-falco-obsecvvv
+  name: release-name-falco-obsec
   namespace: default
   labels:
     app: release-name-falco-obsec
