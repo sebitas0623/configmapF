@@ -238,10 +238,10 @@ data:
     law or agreed to in writing, software\n# distributed under the License is distributed
     on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express
     or implied.\n# See the License for the specific language governing permissions and\n#
-    limitations under the License.\n#\n# sebas 2\n#\n# The latest Falco Engine version
-    is 9.\n# Starting with version 8, the Falco engine supports exceptions.\n# However
-    the Falco rules file does not use them by default.\n- required_engine_version: 9\n\n#
-    Currently disabled as read/write are ignored syscalls. The nearly\n# similar open_write/open_read
+    limitations under the License.\n#\n#\n# The latest Falco Engine version is 9.\n#
+    Starting with version 8, the Falco engine supports exceptions.\n# However the Falco
+    rules file does not use them by default.\n- required_engine_version: 9\n\n# Currently
+    disabled as read/write are ignored syscalls. The nearly\n# similar open_write/open_read
     check for files being opened for\n# reading/writing.\n# - macro: write\n#   condition:
     (syscall.type=write and fd.type in (file, directory))\n# - macro: read\n#   condition:
     (syscall.type=read and evt.dir=> and fd.type in (file, directory))\n\n- macro: open_write\n
