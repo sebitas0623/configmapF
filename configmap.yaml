@@ -1859,5 +1859,5 @@ data:
     (user=%user.loginname uid=%user.loginuid command=%proc.cmdline args=%proc.args)\"\n
     \ priority: CRITICAL\n  tags: [process, mitre_privilege_escalation]\n\n\n# Application
     rules have moved to application_rules.yaml. Please look\n# there if you want to
-    enable them by adding to\n# falco_rules.local.yaml.\n SEBASTIAN \n"
+    enable them by adding to\n# falco_rules.local.yaml.\n"
   k8s_audit_rules.yaml: ""
