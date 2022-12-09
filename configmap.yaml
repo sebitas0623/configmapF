@@ -1866,5 +1866,5 @@ data:
     Exploit (CVE-2021-4034) (user=%user.loginname uid=%user.loginuid command=%proc.cmdline
     args=%proc.args Custom_Tags=IRT_Alert)\"\n  priority: CRITICAL\n  tags: [process,
     mitre_privilege_escalation, IRT_Alert]\n\n\n# Application rules have moved to application_rules.yaml.
-    Please look SEBASTIAN\n# there if you want to enable them by adding to\n# falco_rules.local.yaml.\n"
+    Please look\n# there if you want to enable them by adding to\n# falco_rules.local.yaml.\n"
   k8s_audit_rules.yaml: ""
