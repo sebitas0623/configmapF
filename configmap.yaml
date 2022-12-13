@@ -1814,19 +1814,19 @@ data:
     Sudo Privilege Escalation Exploit (CVE-2021-3156) (user=%user.name parent=%proc.pname
     cmdline=%proc.cmdline %container.info Custom_Tags=IRT_Alert)\"\n  priority: CRITICAL\n
     \ tags: [filesystem, mitre_privilege_escalation, IRT_Alert]\n\n# BASELINE RULES\n-
-    rule: Debugfs Launched in Privileged Container\n  enabled: true\n  desc: Detect
-    file system debugger debugfs launched inside a privileged container which might
+    rule: Debugfs Launched in Privileged Container\n  desc: Detect file system debugger
+    debugfs launched inside a privileged container which might lead to container escape.\n
+    \ condition: >\n    spawned_process and container\n    and container.privileged=true\n
+    \   and proc.name=debugfs\n  output: Debugfs launched started in a privileged container
+    (user=%user.name user_loginuid=%user.loginuid command=%proc.cmdline %container.info
+    image=%container.image.repository:%container.image.tag Custom_Tags=IRT_Alert)\n
+    \ priority: WARNING\n  tags: [container, cis, mitre_lateral_movement, IRT_Alert]\n\n-
+    macro: mount_info\n  condition: (proc.args=\"\" or proc.args intersects (\"-V\",
+    \"-l\", \"-h\"))\n\n# BASELINE RULES\n- rule: Mount Launched in Privileged Container\n
+    \ desc: Detect file system mount happened inside a privilegd container which might
     lead to container escape.\n  condition: >\n    spawned_process and container\n    and
-    container.privileged=true\n    and proc.name=debugfs\n  output: Debugfs launched
-    started in a privileged container (user=%user.name user_loginuid=%user.loginuid
-    command=%proc.cmdline %container.info image=%container.image.repository:%container.image.tag
-    Custom_Tags=IRT_Alert)\n  priority: WARNING\n  tags: [container, cis, mitre_lateral_movement,
-    IRT_Alert]\n\n- macro: mount_info\n  condition: (proc.args=\"\" or proc.args intersects
-    (\"-V\", \"-l\", \"-h\"))\n\n# BASELINE RULES\n- rule: Mount Launched in Privileged
-    Container\n  desc: Detect file system mount happened inside a privilegd container
-    which might lead to container escape.\n  condition: >\n    spawned_process and container\n
-    \   and container.privileged=true\n    and proc.name=mount\n    and not mount_info\n
-    \ output: Mount was executed inside a privileged container (user=%user.name user_loginuid=%user.loginuid
+    container.privileged=true\n    and proc.name=mount\n    and not mount_info\n  output:
+    Mount was executed inside a privileged container (user=%user.name user_loginuid=%user.loginuid
     command=%proc.cmdline %container.info image=%container.image.repository:%container.image.tag)\n
     \ priority: WARNING\n  tags: [container, cis, mitre_lateral_movement]\n\n- macro:
     consider_userfaultfd_activities\n  condition: (never_true)\n\n- list: user_known_userfaultfd_processes\n
